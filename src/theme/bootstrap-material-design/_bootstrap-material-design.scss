@@ -1,0 +1,149 @@
+/* --------------------------------------------------------
+   Dependency (for bootstrap variables)
+   --------------------------------------------------------- */
+
+@import '../../../node_modules/bootstrap/scss/functions';     // imported in case our bootstrap-material-design variables require _function code as dependencies in the bootstrap/ variables directory (this is the case with the bootstrap library)
+
+
+
+
+// ---------------------------------------------------------
+// Variables
+// ---------------------------------------------------------
+// Import default bootstrap-material-design/ variables and override with project specific variables
+
+@import 'variables';                                   // project variables
+@import '../../../node_modules/bootstrap-material-design/scss/variables';     // default bootstrap variables from library
+
+
+
+
+/* --------------------------------------------------------
+   Core mixins
+   --------------------------------------------------------- */
+
+@import 'mixins';       // project included library mixins
+
+
+
+/* --------------------------------------------------------
+   Bootstrap Import
+   --------------------------------------------------------- */
+
+@import '../bootstrap/bootstrap';           // import our custom bootstrap so we can keep our bundled CSS small in size (otherwise we import the entire bootstrap library including all the components we're not using).. Anything bootstrap-material-design does not have, we can import here from regular bootstrap
+
+
+
+/* --------------------------------------------------------
+   Reboot and dependencies
+   --------------------------------------------------------- */
+
+@import '../../../node_modules/bootstrap-material-design/scss/reboot';       // normalization of html elements to remove redundancy and styles targeting irrelevant browsers while (rebooting) applying new styles
+
+
+
+/* --------------------------------------------------------
+   Core CSS
+   --------------------------------------------------------- */
+
+@import '../../../node_modules/bootstrap-material-design/scss/buttons';
+@import '../../../node_modules/bootstrap-material-design/scss/forms';
+@import '../../../node_modules/bootstrap-material-design/scss/layout';
+@import '../../../node_modules/bootstrap-material-design/scss/ripples';    // ripple effect that is included in almost all components
+@import '../../../node_modules/bootstrap-material-design/scss/tables';
+@import '../../../node_modules/bootstrap-material-design/scss/themes';     // includes bg-inverse (light bg is default)
+@import '../../../node_modules/bootstrap-material-design/scss/type';       // typography (headings, lists, body text, etc.)
+
+
+
+/* --------------------------------------------------------
+   Components
+   --------------------------------------------------------- */
+
+@import '../../../node_modules/bootstrap-material-design/scss/alerts';
+@import '../../../node_modules/bootstrap-material-design/scss/cards';
+@import '../../../node_modules/bootstrap-material-design/scss/checkboxes';     // material design checkbox (all bootstrap form controls are in 'forms and custom-forms')
+@import '../../../node_modules/bootstrap-material-design/scss/custom-forms';   // forms with alt custom styles
+@import '../../../node_modules/bootstrap-material-design/scss/drawer';         // material design exclusive (sidebar/overlay component)
+@import '../../../node_modules/bootstrap-material-design/scss/dropdown';
+@import '../../../node_modules/bootstrap-material-design/scss/input-group';
+@import '../../../node_modules/bootstrap-material-design/scss/list-group';
+@import '../../../node_modules/bootstrap-material-design/scss/modal';
+@import '../../../node_modules/bootstrap-material-design/scss/nav';            // base nav
+@import '../../../node_modules/bootstrap-material-design/scss/navbar';         // nav with added features
+@import '../../../node_modules/bootstrap-material-design/scss/pagination';
+@import '../../../node_modules/bootstrap-material-design/scss/popover';
+@import '../../../node_modules/bootstrap-material-design/scss/progress';
+@import '../../../node_modules/bootstrap-material-design/scss/radios';         // material design radio button
+@import '../../../node_modules/bootstrap-material-design/scss/switches';       // material design on/off control
+@import '../../../node_modules/bootstrap-material-design/scss/tooltip';
+
+
+
+
+/* --------------------------------------------------------
+   Extensions
+   --------------------------------------------------------- */
+
+@import '../../../node_modules/bootstrap-material-design/scss/extensions/snackbarjs';
+@import '../../../node_modules/bootstrap-material-design/scss/extensions/selectize';
+
+
+
+
+/* --------------------------------------------------------
+   Bootswatch Theme
+   --------------------------------------------------------- */
+
+//@import '~bootswatch/dist/cerulean/variables';        // place these around the import './bootstrap/bootstrap' line in styles.scss with the variables.scss first and then the bootswatch.scss after to properly import and merge them all together
+//@import '~bootswatch/dist/cerulean/bootswatch';
+//@import '~bootswatch/dist/cosmo/variables';
+//@import '~bootswatch/dist/cosmo/bootswatch';
+//@import '~bootswatch/dist/cyborg/variables';
+//@import '~bootswatch/dist/cyborg/bootswatch';
+//@import '~bootswatch/dist/darkly/variables';
+//@import '~bootswatch/dist/darkly/bootswatch';
+//@import '~bootswatch/dist/flatly/variables';
+//@import '~bootswatch/dist/flatly/bootswatch';
+//@import '~bootswatch/dist/journal/variables';
+//@import '~bootswatch/dist/journal/bootswatch';
+//@import '~bootswatch/dist/litera/variables';
+//@import '~bootswatch/dist/litera/bootswatch';
+//@import '~bootswatch/dist/lumen/variables';
+//@import '~bootswatch/dist/lumen/bootswatch';
+//@import '~bootswatch/dist/lux/variables';
+//@import '~bootswatch/dist/lux/bootswatch';
+//@import '~bootswatch/dist/materia/variables';
+//@import '~bootswatch/dist/materia/bootswatch';
+//@import '~bootswatch/dist/minty/variables';
+//@import '~bootswatch/dist/minty/bootswatch';
+//@import '~bootswatch/dist/pulse/variables';
+//@import '~bootswatch/dist/pulse/bootswatch';
+//@import '~bootswatch/dist/sandstone/variables';
+//@import '~bootswatch/dist/sandstone/bootswatch';
+//@import '~bootswatch/dist/simplex/variables';
+//@import '~bootswatch/dist/simplex/bootswatch';
+//@import '~bootswatch/dist/sketchy/variables';
+//@import '~bootswatch/dist/sketchy/bootswatch';
+//@import '~bootswatch/dist/slate/variables';
+//@import '~bootswatch/dist/slate/bootswatch';
+//@import '~bootswatch/dist/solar/variables';
+//@import '~bootswatch/dist/solar/bootswatch';
+//@import '~bootswatch/dist/spacelab/variables';
+//@import '~bootswatch/dist/spacelab/bootswatch';
+//@import '~bootswatch/dist/superhero/variables';
+//@import '~bootswatch/dist/superhero/bootswatch';
+//@import '~bootswatch/dist/united/variables';
+//@import '~bootswatch/dist/united/bootswatch';
+//@import '~bootswatch/dist/yeti/variables';
+//@import '~bootswatch/dist/yeti/bootswatch';
+
+
+
+
+
+/* --------------------------------------------------------
+   Extra Added Bootstrap Styling or Addons
+   --------------------------------------------------------- */
+
+//@import 'extra';

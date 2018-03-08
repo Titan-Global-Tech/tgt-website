@@ -1,0 +1,26 @@
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
+import { fetchContests } from './api';
+
+
+const mock = new MockAdapter(axios);        // creates 'mock' obj that works as an adapter for axios to make fake calls and reply http responses that we tell it to with '.reply()'. We use functions to tell the adapter to intercept http requests that are made afterwards by axios (and it does not have to be the same 'axios' obj we called MockAdapter() with), it will intercept all axios http requests and we can signify what type of requests to intercept or inject with .onGet(), .onPost(), .onPut(), and .onAny()
+
+describe('fetchContests suite', () => {                                 // describe signifies a whole testing suite, in which we could have multiple tests and integration tests (it) in it to give coverage to the entire API file if there are multiple call functions that need to be tested especially if they are all axios calls since we are using an axios adapter
+    it('fetchContests call should return res.data.contests', done => {      // defines the specific integration test (it alias for test) within the 'fetchContests suite', and it's callback will define the test to take place and passes in 'done' arg that should be called when test is done()
+        const myData = {
+            contests: 'returned contest list'           // create a data obj here with an inner 'contest' property so that this data (myData inject into 'response.data') will be able to match up to the 'fetchContests' return data which is in the format of 'res.data.contests' so we needed to make our expectedData fit to that object structure
+        };
+
+        mock.onGet('/api/contests').reply(200, myData);       // creates an interceptor on our axios adapter that will intercept any GET request (onGet) from an axios call that goes to endpoint '/api/contests' on our host (should match the request url of the axios call we are trying to stop, so if it is 'http://localhost:3000/api/contests' then we use that, but in this case it uses just the endpoint). After we intercept the request, we then tell the request to reply a specific way that we specify by calling 'reply()' on our intercepted request, and we tell it to reply with a '200' OK status and also tell it to send back data that is added into the response property of 'data' so that our {contest: ...} obj will be retrieved with reference 'response.data.contests' and the 'response' sent back by the automated 'reply()' will still be a normal http response with headers and such, except it will be controlled by us and our mock obj that intercepts it
+
+        fetchContests().then((contests) => {            // makes the integration call to the API function fetchContests() which makes an axios call (the same one that can be seen below here just give perspective on what it does and how the response and response data are sent back and structured). In fetchContests(), the data is fetched and then the response object is traversed to go from response to 'data' prop to 'contests' to give the list of contests and pass that back as the return object for the Promise passed back by axios.get(), however because we intercepted the axios GET request, we stop it from contacting the actual /api/contests endpoint and instead we tell it to pass back an OK status '200' and tell it to pass the 'data' object we formulated in the object we structured with an object (injected into the responses built-in 'data' property), in which our object has an inner 'contests' property so the fetchContests() will still be able to traverse from its valid mock response we set to the 'data' property that holds our 'data' we passed in that holds the object with inner prop 'contests' and this will have this 'contests' property aka String 'returned contest list' sent back and it will be passed into the .then() Promise callback in our api.test.js .then() call
+            expect(contests).toEqual(myData.contests);      // tests for a match between String sent back from fetchContests as it's responses 'res.data.contests' and tests this against our 'myData.contests' which is the 'contests' we originally injected and matches with the actual response's data.contests because 'response' has the myData obj we injected put in its 'response.data' built-in property where our data will go when we use reply() like this to inject data in the response
+            done();                                     // done() tells it the test is over
+        });
+        /*axios.get('/api/contests').then(response => {             // here you can see the exact same call/intercepted call made except this does not give coverage to our API since it is solely in our test.js file, whereas we need to integrate it with fetchContests.
+            console.log(JSON.stringify(response));                  // shows us that the response that our mock adapter intercepts and re-sends with reply() is still a valid response with headers and such except it stops it from reaching its actual endpoint /api/contests and it sends back mock data instead in response.data
+            expect(response.data.contests).toEqual(data.contests);
+            done();
+        })*/
+    });
+});

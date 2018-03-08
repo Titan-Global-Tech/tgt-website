@@ -1,0 +1,17 @@
+# Stop heroku slug stop from pushing any of these to the dynos instances (files and folders to be excluded)
+#.gitignore
+#.travis.yml
+#middleware.js
+#coverage/
+#public/bundle.js
+#README.md
+#webpack.config.js
+#server/controller.js
+#server/routing.js
+#server/serverRender.js
+#api/index.js
+#public/hot/
+
+# Entire frontend application
+#src/
+

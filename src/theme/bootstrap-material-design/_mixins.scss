@@ -1,0 +1,20 @@
+
+// Decide what mixins to include in Project
+
+// Utilities
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/animations";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/breakpoints";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/hover";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/type";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/utilities";
+//
+// Bootstrap Components
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/buttons";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/forms";
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/navs";
+//
+// Material Components
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/drawer";
+//
+// Layout
+@import "../../../node_modules/bootstrap-material-design/scss/mixins/layout";

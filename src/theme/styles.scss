@@ -1,0 +1,56 @@
+
+@import 'bootstrap/variables';       // if you want our custom _variables to override the darkly theme variables
+
+@import '../../node_modules/bootswatch/dist/darkly/variables';      // define bootswatch theme's variables first before our bootstrap config which will set all the colors, palette, and look for the theme
+@import 'bootstrap/bootstrap';                // imports our bootstrap custom configuration
+@import '../../node_modules/bootswatch/dist/darkly/bootswatch';       // overrides the bootstrap functionality that the theme (darkly) needs to function as intended (these include overwritten functions and such)
+
+
+
+
+@import 'footer';
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+h1 {
+    text-align: center;
+}
+
+pre {
+    color: white;
+}
+
+.contestItem {
+    margin: 1em;
+    border: 1px solid #ccc;
+
+    .category-name {
+        border-bottom: 1px solid #ccc;
+        padding: .25em .5em;
+        font-weight: bold;
+        background-color: #3a3a3a;
+    }
+
+    .contest-name {
+        padding: .5em;
+    }
+}
+
+.link {
+    cursor: pointer;
+}
+
+.home-link {
+    margin-top: 1em;
+    color: #25357a;
+    display: inline-block;
+}
+
+

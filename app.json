@@ -1,0 +1,21 @@
+{
+    "name": "tgt-website",
+    "description": "Titan Global Tech company website and online exhibition.",
+    "repository": "https://github.com/Titan-Global-Tech/tgt-website",
+    "keywords": ["titan-global-tech"],
+    "scripts": {
+
+    },
+    "env": {
+        "NPM_CONFIG_PRODUCTION": "true"
+    },
+    "formation": {
+
+    },
+    "addons": [
+
+    ],
+    "buildpacks": [
+
+    ]
+}

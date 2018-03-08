@@ -1,0 +1,3 @@
+# Starting Website Template
+
+Starting website template for one of my projects. It is derived from [b1tn3r/fuller-stack-starter-app](https://github.com/b1tn3r/fuller-stack-starter-app), but without all the extra options for starting an app. In this template I have chosen a specific UI libraries and the features to add, but the core features of using React, Redux, and React-Redux-Router are still the same.
